@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgcolor: #414244;
+    --mainboxcolor: #2F3137;
+    --boxcolor: #383B42;
+    --box2color: #464A53;
+    --fontcolor: #ffffff;
+    --lablecolor: #818181;
+}
+
+.light {
+    --bgcolor: #cdcdcd;
+    --mainboxcolor: #F2F2F2;
+    --boxcolor: #FFFFFF;
+    --box2color: #FFDEFE;
+    --fontcolor: #2F3137;
+    --lablecolor: #c1c1c1;
+}
+
+body {
+    background-color: var(--bgcolor);
+    color: var(--fontcolor);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* utility  */
+.coulmn {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.mainAxisCenter {
+    justify-content: center;
+}
+
+.crossAxisCenter {
+    align-items: center;
+}
+
+/* styling  */
+
+.maindiv {
+    width: 100vw;
+    height: 100vh;
+}
+
+.secdiv {
+    background-color: var(--mainboxcolor);
+    width: 400px;
+    height: 600px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+
+.secdiv:hover {
+    background: var(--mainboxcolor);
+    box-shadow: 20px 20px 60px var(--mainboxcolor),
+        -20px -20px 60px var(--mainboxcolor);
+    transition-delay: .1s;
+
+}
+
+h3 {
+    font-size: 25px;
+    color: var(--fontcolor);
+}
+
+.header {
+    padding: 5px 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+    background-color: var(--boxcolor);
+
+}
+
+.lable {
+    margin: 20px 0px;
+    justify-content: space-between;
+}
+
+a {
+    color: var(--lablecolor);
+    text-decoration: none;
+}
+
+#mode_switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--lablecolor);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.checkbox {
+    background-color: var(--box2color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.task-title {
+    font-size: 18px;
+    margin-left: 10px;
+    flex: 2;
+}
+
+.task {
+    justify-content: space-between;
+    background-color: var(--boxcolor);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+a:hover {
+    color: #FFB800;
+    transition-delay: .1s;
+}
+
+.task:hover {
+    transition-delay: .1s;
+    background-color: var(--lablecolor);
+}
+
+.deletelogo {
+    cursor: pointer;
+    width: 20px;
+    height: 23px;
+}
+.newtask{
+    width: 300px !important;
+    height: 40px;
+    justify-content: center;
+    gap: 10px;
+    background-color: #FFB800;
+    width: fit-content;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 70px;
+    left: 39%;
+    cursor: pointer;
+    padding-right: 10px;
+}
+.btn{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.edit{
+    width: 30px;
+}
+.Textinput{
+    width: 90%;
+    border-radius: 20px 0px 0px 20px ;
+    padding-left: 10px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    background-color: var(--bgcolor);
+    border: none;
+    color: var(--fontcolor);
+}
+.Textinput:active{
+    border: none;
+
+}
+
+.newtask{
+
+}
+.tasks{
+    height: 450px;
+    overflow-y: scroll;
+}
+.popup{
+    position: absolute;
+    bottom: 9%;
+    left: 40%;
+    background-color: var(--bgcolor);
+    padding: 5px;
+    width: 300px;
+    border-radius: 10px;
+}
+.taskenter{
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.credit {
+    position: absolute;
+    bottom: 5px;
+    color: var(--fontcolor);
+}
+
+.profile {
+    color: var(--fontcolor);
+    font-weight: bold;
+    letter-spacing: 1.2px;
+}
+
+.profile:hover {
+    color: #06DD57;
+}
