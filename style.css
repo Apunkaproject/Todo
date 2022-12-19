@@ -10,11 +10,11 @@
     --bgcolor: #414244;
     --mainboxcolor: #2F3137;
     --boxcolor: #383B42;
-    --box2color: #464A53;
+    --btncolo:#FFB800;
     --fontcolor: #ffffff;
     --lablecolor: #818181;
+    --other:#06DD57;
 }
-
 .light {
     --bgcolor: #cdcdcd;
     --mainboxcolor: #F2F2F2;
@@ -29,182 +29,122 @@ body {
     color: var(--fontcolor);
     font-family: 'Poppins', sans-serif;
 }
-
-/* utility  */
-.coulmn {
-    display: flex;
-    flex-direction: column;
-}
-
-.row {
-    display: flex;
-}
-
-.mainAxisCenter {
-    justify-content: center;
-}
-
-.crossAxisCenter {
-    align-items: center;
-}
-
-/* styling  */
-
-.maindiv {
+.mainBox{
     width: 100vw;
     height: 100vh;
-}
-
-.secdiv {
-    background-color: var(--mainboxcolor);
-    width: 400px;
-    height: 600px;
-    padding: 10px;
-    border-radius: 10px;
-
-}
-
-
-.secdiv:hover {
-    background: var(--mainboxcolor);
-    box-shadow: 20px 20px 60px var(--mainboxcolor),
-        -20px -20px 60px var(--mainboxcolor);
-    transition-delay: .1s;
-
-}
-
-h3 {
-    font-size: 25px;
-    color: var(--fontcolor);
-}
-
-.header {
-    padding: 5px 10px;
-    border-radius: 10px;
-    justify-content: space-between;
-    background-color: var(--boxcolor);
-
-}
-
-.lable {
-    margin: 20px 0px;
-    justify-content: space-between;
-}
-
-a {
-    color: var(--lablecolor);
-    text-decoration: none;
-}
-
-#mode_switch {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    background-color: var(--lablecolor);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
 }
-
-.checkbox {
-    background-color: var(--box2color);
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.task-title {
-    font-size: 18px;
-    margin-left: 10px;
-    flex: 2;
-}
-
-.task {
-    justify-content: space-between;
-    background-color: var(--boxcolor);
+.box{
     padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    background-color: var(--boxcolor);
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
 }
-
-a:hover {
-    color: #FFB800;
-    transition-delay: .1s;
-}
-
-.task:hover {
-    transition-delay: .1s;
-    background-color: var(--lablecolor);
-}
-
-.deletelogo {
-    cursor: pointer;
-    width: 20px;
-    height: 23px;
-}
-.newtask{
-    width: 300px !important;
-    height: 40px;
+.header{
+    display: flex;
     justify-content: center;
-    gap: 10px;
-    background-color: #FFB800;
-    width: fit-content;
-    border-radius: 20px;
-    position: absolute;
-    bottom: 70px;
-    left: 39%;
-    cursor: pointer;
-    padding-right: 10px;
+    align-items:center;
+    border-radius:  10px;
+    width: 100%;
+    background-color: var(--bgcolor);
 }
-.btn{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-.edit{
-    width: 30px;
-}
-.Textinput{
-    width: 90%;
-    border-radius: 20px 0px 0px 20px ;
-    padding-left: 10px;
+.InputText{
+    width: 88%;
+    height: 40px;
+    border-radius: 10px 0px 0px 10px;
+    border: none;
+    background-color: var(--bgcolor);
+    color: var(--fontcolor);
     font-size: 18px;
     letter-spacing: 1.5px;
-    background-color: var(--bgcolor);
-    border: none;
-    color: var(--fontcolor);
+    padding-left: 5px;
 }
-.Textinput:active{
+#todoBtn{
+    width: 40px;
+    height: 40px;
+    background-color: var(--btncolo);
     border: none;
-
+    border-radius: 0px 10px 10px 0px;
 }
-
-.newtask{
-
+.lable{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+}
+.fisrt{
+    display: flex;
+    gap: 5px;
 }
 .tasks{
-    height: 450px;
+    /* background-color: #06DD57; */
+    height: 420px;
     overflow-y: scroll;
+
 }
-.popup{
-    position: absolute;
-    bottom: 9%;
-    left: 40%;
+::-webkit-scrollbar{
+    display: none;
+}
+ul{
+    list-style: none;
+}
+.todo{
+    gap: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: var(--bgcolor);
-    padding: 5px;
-    width: 300px;
     border-radius: 10px;
+    padding: 0px 0px 0px 10px;
+    margin-top: 10px;
+    transition: all 0.5s ease-in;
 }
-.taskenter{
-    width: 80%;
-    height: 30px;
-    border-radius: 10px;
-    padding-left: 10px;
+.todo li{
+    flex: 1;
     font-size: 15px;
 }
-.credit {
+
+.comBtn, .delBtn{
+    background-color: var(--btncolo);
+    /* padding: 1rem; */
+    border: none;
+    border-radius: 2px 10px 10px 2px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--fontcolor);
+    font-weight: bold;
+}
+.comBtn{
+    background-color: var( --other);
+    border-radius: 2px;
+  }
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+.todotitile{
+    position: absolute;
+    top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    gap: 20px;
+}
+.todotitile img{
+    width: 60px;
+    height: 60px;
+}
+ .credit {
     position: absolute;
     bottom: 5px;
     color: var(--fontcolor);

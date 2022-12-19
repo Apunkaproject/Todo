@@ -1,22 +1,79 @@
-// dark mode and light mode 
-var mode_switch = document.getElementById("mode_switch");
-mode_switch.addEventListener("click",function()
+
+
+var todobtn = document.getElementById("todoBtn");
+var todolist = document.querySelector(".todolist");
+var totaltask = document.getElementById("totaltask");
+var todoinput = document.getElementById("todoinput");
+
+var taskcount = 0;
+
+// add event listneer
+todobtn.addEventListener("click", onTodoAdd);
+todolist.addEventListener("click",checkdelbtn);
+
+//functoin
+function onTodoAdd()
 {
-    document.body.classList.toggle("light");
-    console.log("hello");
-});
-// popup 
-var modal = document.getElementById("popup");
-var btn = document.getElementById("popbtn");
-var close = document.getElementById("close"); 
-btn.onclick = function() {
-  modal.style.display = "block";
+   
+   taskcount=taskcount+1;
+    //Todo Div
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
+    // Create LI
+    const newTodo = document.createElement("li");
+    newTodo.classList.add("todo-item");
+    newTodo.innerText=todoinput.value;
+    todoDiv.appendChild(newTodo);
+
+    // check button 
+    const comBtn = document.createElement("button");
+    comBtn.innerHTML='C';
+    comBtn.classList.add("comBtn");
+    todoDiv.appendChild(comBtn);
+    // del button 
+    const delBtn = document.createElement("button");
+    delBtn.innerHTML='X';
+    delBtn.classList.add("delBtn");
+    todoDiv.appendChild(delBtn);
+    todolist.appendChild(todoDiv);
+
+    console.log("On Add button click");
+    todoinput.value="";
+    totaltask.innerText=taskcount;
+  
 }
-close.onclick = function() {
-  modal.style.display = "none";
+
+function checkdelbtn(e)
+{
+    console.log(e.target.classList);
+    const item = e.target;
+
+    if(item.classList[0]==='delBtn')
+    {
+        console.log("delete");
+        const todo = item.parentElement;
+        todo.classList.add("fall");
+        todo.addEventListener("transitionend",function()
+        {
+            todo.remove();
+        })
+       
+        taskcount=taskcount-1;
+        totaltask.innerText=taskcount;
+   
+    }
+    if(item.classList[0]==='comBtn')
+    {
+        console.log("Complite");
+        const todo = item.parentElement;
+        todo.classList.toggle("completed");
+        
+    
+    }
 }
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+
+// var mode_switch = document.getElementById("mode_switch");
+// mode_switch.addEventListener("click",function()
+// {
+//     document.body.classList.toggle("light");
+// });
